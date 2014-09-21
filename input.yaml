@@ -1,0 +1,49 @@
+Cafe:
+    fields:
+        Title: varchar
+    relations:
+        Menu: one
+
+Menu:
+    fields:
+        Price: numeric
+    relations:
+        Cafe: many
+        Item: many
+        Order: many
+
+Item:
+    fields:
+        Title: varchar
+    relations:
+        Menu: many
+
+Order:
+    fields:
+        Title: varchar
+    relations:
+        Menu: many
+        Payment: one
+        Discount: one
+        User: one
+
+User:
+    fields:
+        FirstName: varchar
+        LastName: varchar
+        Email: varchar
+    relations:
+        Order: many
+
+Discount:
+    fields:
+        Amount: int
+    relations:
+        Order: many
+
+Payment:
+    fields:
+        Total: numeric
+    relations:
+        Order: one
+
