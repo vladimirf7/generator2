@@ -1,49 +1,69 @@
-Cafe:
-    fields:
-        Title: varchar
-    relations:
-        Menu: one
+Article:
+   fields:
+       title: varchar(50)
+       text: text
+   relations:
+       Category: one
+       Tag: many
 
-Menu:
-    fields:
-        Price: numeric
-    relations:
-        Cafe: many
-        Item: many
-        Order: many
+Category:
+   fields:
+       title: varchar(50)
+   relations:
+       Article: many
 
-Item:
-    fields:
-        Title: varchar
-    relations:
-        Menu: many
+Tag:
+   fields:
+       value: varchar(50)
+   relations:
+       Article: many
 
-Order:
-    fields:
-        Title: varchar
-    relations:
-        Menu: many
-        Payment: one
-        Discount: one
-        User: one
+# Cafe:
+#     fields:
+#         Title: varchar
+#     relations:
+#         Menu: one
 
-User:
-    fields:
-        FirstName: varchar
-        LastName: varchar
-        Email: varchar
-    relations:
-        Order: many
+# Menu:
+#     fields:
+#         Price: numeric
+#     relations:
+#         Cafe: many
+#         Dish: many
+#         Order: many
 
-Discount:
-    fields:
-        Amount: int
-    relations:
-        Order: many
+# Dish:
+#     fields:
+#         Title: varchar
+#     relations:
+#         Menu: many
 
-Payment:
-    fields:
-        Total: numeric
-    relations:
-        Order: one
+# Order:
+#     fields:
+#         Title: varchar
+#     relations:
+#         Menu: many
+#         Payment: one
+#         Discount: one
+#         User: one
+
+# User:
+#     fields:
+#         FirstName: varchar
+#         LastName: varchar
+#         Email: varchar
+#     relations:
+#         Order: many
+
+# Discount:
+#     fields:
+#         Amount: int
+#     relations:
+#         Order: many
+
+# Payment:
+#     fields:
+#         Total: numeric
+#     relations:
+#         Order: one
 
