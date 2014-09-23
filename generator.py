@@ -44,7 +44,7 @@ class Generator:
                     if self_table_name in other_table._relations:
                         self.create_relation(self_table, other_table)
                     else:
-                        raise Exception('Two-way relation error in YAML file ' + self_table_name + ' ' + other_table_name)
+                        raise Exception('Two-way relation error in YAML file ')
 
     def create_sql_tables(self):
         for table in self._tables.values():
