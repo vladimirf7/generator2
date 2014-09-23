@@ -1,18 +1,7 @@
-my_set = set()
+from relation import Relation, Cardinality
 
-my_set.add('Hello')
-my_set.add('world')
-my_set.add('brave')
+a = Relation('article', 'tag', Cardinality.many_many)
+b = Relation('tag', 'article', Cardinality.many_many)
 
-print(my_set)
-
-my_set.add('ura')
-
-print(my_set)
-
-my_set.add('world')
-my_set.add('world')
-my_set.add('world')
-my_set.add('world')
-
-print(my_set)
+print(a.table_name)
+print(b.table_name)
